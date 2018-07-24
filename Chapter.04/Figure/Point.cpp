@@ -4,27 +4,26 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-bool Point::InitMembers(int xpos, int ypos)
+Point::Point(const int &xpos, const int &ypos)
 {
-    if(xpos < 0 || ypos < 0)
-    {
-        cout<<"벗어난 범위의 값 전달"<<endl;
-        return false;
-    }
     x=xpos;
     y=ypos;
-    return true;
 }
 
-int Point::GetX() const
-{
-    return x;
-}
+// bool Point::InitMembers(int xpos, int ypos)
+// {
+//     if(xpos < 0 || ypos < 0)
+//     {
+//         cout<<"벗어난 범위의 값 전달"<<endl;
+//         return false;
+//     }
+//     x=xpos;
+//     y=ypos;
+//     return true;
+// }
 
-int Point::GetY() const
-{
-    return y;
-}
+int Point::GetX() const { return x; }
+int Point::GetY() const { return y; }
 
 bool Point::SetX(int xpos)
 {
@@ -46,5 +45,10 @@ bool Point::SetY(int ypos)
     }
     y=ypos;
     return true;
+}
+
+void Point::ShowPointInfo() const
+{
+    cout<<"["<<x<<", "<<y<<"]"<<endl;
 }
 
