@@ -42,7 +42,7 @@ public:
 
 int main()
 {
-	Person *parr[3];
+	Person *parr[3];    // 포인터 배열 선언
 	char namestr[100];
 	int age;
 
@@ -52,7 +52,7 @@ int main()
 		cin >> namestr;
 		cout << "나이: ";
 		cin >> age;
-		parr[i] = new Person(namestr, age);
+		parr[i] = new Person(namestr, age); // 객체생성, 주소 값을 배열에 저장
 	}
 	parr[0]->ShowPersonInfo();
 	parr[1]->ShowPersonInfo();
