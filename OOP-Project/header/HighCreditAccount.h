@@ -5,19 +5,19 @@
 
 class HighCreditAccount : public NormalAccount
 {
-  private:
-    int credit;
+private:
+	int credit;
 
-  public:
-    HighCreditAccount(int accID, int balance, const char *name, int ratio, int credit)
-        : NormalAccount(accID, balance, name, ratio), credit(credit)
-    {
-    }
-    virtual void Deposit(int money)
-    {
-        NormalAccount::Deposit(money);
-        Account::Deposit(money*(credit/100.0));
-    }
+public:
+	HighCreditAccount(int accID, int balance, const char *name, int ratio, int credit)
+		: NormalAccount(accID, balance, name, ratio), credit(credit)
+	{
+	}
+	virtual void Deposit(int money)
+	{
+		NormalAccount::Deposit(money);
+		Account::Deposit(money*(credit / 100.0));
+	}
 };
 
 #endif

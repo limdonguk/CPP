@@ -3,19 +3,20 @@
 
 class Account
 {
-  private:
-    int accID;
-    int balance;
-    char *cusName;
+private:
+	int accID;
+	int balance;
+	char *cusName;
 
-  public:
-    Account(int accID, int balance, const char *name);
-    Account(const Account &copy);
-    int GetID() const;
-    void Deposit(int money);
-    int Withdraw(int money);
-    void showAccInfo() const;
-    ~Account();
+public:
+	Account(int accID, int balance, const char *name);
+	Account(const Account &copy);
+	Account& operator=(const Account& ref);
+	int GetID() const;
+	virtual void Deposit(int money);
+	int Withdraw(int money);
+	void showAccInfo() const;
+	~Account();
 };
 
 #endif
